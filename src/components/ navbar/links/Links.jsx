@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import NavLink from "../navLink/navLink";
 
 const Links = () => {
   const links = [
@@ -20,13 +21,22 @@ const Links = () => {
       path: "/blog",
     },
   ];
+
+  const session = true;
+  const isAdmin = true;
   return (
-    <div>
+    <div className="flex items-center gap-6">
       {links.map((link) => (
-        <Link href={link.path} key={link.title}>
-          {link.title}
-        </Link>
-      ))}
+        <NavLink item={link} key={link.title} />
+      ))}{" "}
+      {session ? (
+        <>
+          {isAdmin && <NavLink item={{ title: "Admin", path: "/login" }} />}
+          <button className="p-2 bg-white text-black rounded-xl">Logout</button>
+        </>
+      ) : (
+        <NavLink item={{ title: "Admin", path: "/login" }} />
+      )}
     </div>
   );
 };
