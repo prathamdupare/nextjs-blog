@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="h-[100px] flex items-center justify-between ">
       <div className="font-bold text-lg">Logo</div>
-      <div>
+      <div className="flex gap-2">
         {" "}
         <Links />
       </div>

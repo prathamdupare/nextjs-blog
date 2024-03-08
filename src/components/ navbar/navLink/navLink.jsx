@@ -4,18 +4,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import { Button } from "@/components/ui/button";
+
 const NavLink = ({ item }) => {
   const pathName = usePathname();
 
   const isActive = item.path == pathName;
   return (
-    <Link
-      href={item.path}
-      key={item.title}
-      className={`p-2 rounded-xl ${isActive ? "bg-white text-black" : ""}`}
-    >
-      {item.title}
-    </Link>
+    <Button variant={`${isActive ? "" : "outline"}`} className="">
+      <Link href={item.path} key={item.title}>
+        {item.title}
+      </Link>
+    </Button>
   );
 };
 
