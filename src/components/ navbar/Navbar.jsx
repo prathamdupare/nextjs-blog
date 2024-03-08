@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Links from "./links/Links";
+import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
         {" "}
         <Links />
       </div>
+      <ModeToggle />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const NavLink = ({ item }) => {
 
   const isActive = item.path == pathName;
   return (
-    <Button variant={`${isActive ? "" : "outline"}`} className="">
+    <Button asChild variant={`${isActive ? "" : "outline"}`} className="">
       <Link href={item.path} key={item.title}>
         {item.title}
       </Link>
