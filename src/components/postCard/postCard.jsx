@@ -23,7 +23,7 @@ const PostCard = () => {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <p>Card Footer</p>
+          <p></p>
         </CardFooter>
       </Card>
     </div>

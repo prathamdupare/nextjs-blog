@@ -19,7 +19,7 @@ const Home = () => {
           <Image src="/brands.png" alt="" height={300} width={600} />
         </div>
       </div>
-      <div className=" w-full flex justify-center items-center ">
+      <div className=" flex w-full justify-center items-center hidden md:flex">
         <Image src="/hero.gif" alt="" height={600} width={600} />
       </div>
     </div>

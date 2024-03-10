@@ -57,7 +57,7 @@ const Links = () => {
         <div>
           <Sheet>
             <SheetTrigger className="md:hidden">Menu</SheetTrigger>
-            <SheetContent>
+            <SheetContent className="flex items-center justify-center">
               <SheetHeader>
                 <SheetTitle>Menu</SheetTitle>
                 <div className="flex items-center flex-col gap-6 md:flex">

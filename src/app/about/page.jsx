@@ -5,8 +5,10 @@ const page = () => {
   return (
     <div className="flex h-full ">
       <div className="w-[90%] h-full flex flex-col justify-center">
-        <h1 className="text-[30px] font-bold">About Agency</h1>
-        <h1 className="text-[50px] font-bold">
+        <h1 className="text-[40px] text-purple-700 dark:text-purple-400 font-bold">
+          About Agency
+        </h1>
+        <h1 className="text-[30px] font-bold">
           We create digital ideas, that are bigger, bolder, braver and better.
         </h1>
         <p className="py-3">
@@ -45,7 +47,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full flex justify-center items-center ">
+      <div className=" w-full flex justify-center items-center hidden md:flex ">
         <Image src="/about.png" alt="" height={600} width={600} />
       </div>
     </div>

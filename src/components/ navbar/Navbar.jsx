@@ -5,7 +5,9 @@ import { ModeToggle } from "../mode-toggle";
 const Navbar = () => {
   return (
     <div className="h-[100px] flex items-center justify-between ">
-      <div className="font-bold text-lg">Logo</div>
+      <Link className="font-bold text-lg" href="/">
+        Logo
+      </Link>
       <div className="flex gap-2">
         {" "}
         <Links />
