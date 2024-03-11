@@ -1,26 +1,34 @@
+import { getPost, getUser } from "@/lib/data";
 import Image from "next/image";
 import React from "react";
 
-const SinglePostPage = ({ params }) => {
+const SinglePostPage = async ({ params }) => {
+  const { slug } = params;
+  const post = await getPost(slug);
+  const user = await getUser(post.userId);
   return (
     <div className="flex flex-col md:flex-row gap-3">
-      <div>
+      <div className="">
         <Image
-          src="https://images.pexels.com/photos/20425642/pexels-photo-20425642/free-photo-of-magnolia.jpeg"
+          src={post.img}
           alt="blog image"
-          className="hidden md:block"
+          className="hidden h-[700px] object-cover md:block"
           height={500}
           width={600}
         />
       </div>
       <div className="pl-3">
         <div>
-          <h1 className="text-[30px]">{params.slug}</h1>
+          <h1 className="text-[30px]">{post.title}</h1>
         </div>
         <div className="flex flex-row my-5 gap-3">
-          <div className="min-w-[30px]">
+          <div className="min-w-[30px] ">
             <Image
-              src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src={
+                user.img
+                  ? user.img
+                  : `https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`
+              }
               className="rounded-full"
               alt="blog image"
               height={30}
@@ -30,7 +38,7 @@ const SinglePostPage = ({ params }) => {
 
           <div>
             <p className="font-xs text-gray-500 dark:text-gray-400">Author</p>
-            <p>Pratham Dupare</p>
+            <p>{user.username}</p>
           </div>
 
           <div>
@@ -40,19 +48,7 @@ const SinglePostPage = ({ params }) => {
             <p>01.01.2024</p>
           </div>
         </div>
-        <p className="max-w-[600px]">
-          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-          enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
-          exercitation amet. Nisi anim cupidatat excepteur officia.
-          Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate
-          voluptate dolor minim nulla est proident. Nostrud officia pariatur ut
-          officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit
-          commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
-          Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis
-          officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis
-          sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
-          consectetur et est culpa et culpa duis.
-        </p>
+        <p className="max-w-[600px]">{post.desc} </p>
       </div>
     </div>
   );

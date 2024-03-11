@@ -1,29 +1,34 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
-const PostCard = () => {
+const PostCard = ({ post }) => {
   return (
     <div className="flex flex-row gap-6">
       <Card>
-        <div className="flex  ">
-          <Image src="/contact.png" alt="" height={300} width={300} />
+        <div className="flex ">
+          <Image
+            src={post.img}
+            className="object-contain p-2 rounded-[15px]"
+            alt="This is post image"
+            height={300}
+            width={300}
+          />
         </div>
         <CardHeader>
-          <CardTitle>Card Title</CardTitle>
+          <CardTitle>{post.title}</CardTitle>
           <CardDescription className="max-w-[200px]">
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            {post.desc}
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <p></p>
+          <Link href={`/blog/${post.slug}`}>Read More..</Link>
         </CardFooter>
       </Card>
     </div>

@@ -1,14 +1,15 @@
 import PostCard from "@/components/postCard/postCard";
+import { getPosts } from "@/lib/data";
 
-const page = () => {
+const page = async () => {
+  const posts = await getPosts();
   return (
-    <div>
-      <div className="flex gap-2 flex-wrap items-center justify-center overflow-auto">
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-      </div>
+    <div className="h-full  flex gap-2 m-2">
+      {posts.map((post) => (
+        <div className="" key={post.id}>
+          <PostCard post={post} />
+        </div>
+      ))}
     </div>
   );
 };
