@@ -44,20 +44,20 @@ const Links = () => {
           <NavLink item={link} key={link.title} />
         ))}{" "}
         {session ? (
-          <>
-            {isAdmin && <NavLink item={{ title: "Admin", path: "/login" }} />}
-
-            <Button variant="destructive">Logout</Button>
-          </>
+          <></>
         ) : (
-          <NavLink item={{ title: "Admin", path: "/login" }} />
+          <div>
+            <Button>Login</Button>
+
+            <Button>Register</Button>
+          </div>
         )}
       </div>
       {open && (
         <div>
           <Sheet>
             <SheetTrigger className="md:hidden">Menu</SheetTrigger>
-            <SheetContent className="flex items-center justify-center">
+            <SheetContent>
               <SheetHeader>
                 <SheetTitle>Menu</SheetTitle>
                 <div className="flex items-center flex-col gap-6 md:flex">
@@ -65,12 +65,7 @@ const Links = () => {
                     <NavLink item={link} key={link.title} />
                   ))}{" "}
                   {session ? (
-                    <>
-                      {isAdmin && (
-                        <NavLink item={{ title: "Admin", path: "/login" }} />
-                      )}
-                      <Button variant="destructive">Logout</Button>
-                    </>
+                    <></>
                   ) : (
                     <NavLink item={{ title: "Admin", path: "/login" }} />
                   )}

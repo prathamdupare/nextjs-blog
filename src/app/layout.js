@@ -4,6 +4,9 @@ import Navbar from "@/components/ navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { SessionProvider } from "next-auth/react";
+import AuthProvider from "@/lib/SessionProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,20 +18,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="container">
-            <Navbar />
-            <div className="h-[85vh]" a>
-              {children}
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="container">
+              <Navbar />
+              <div className="h-[85vh]" a>
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </ThemeProvider>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

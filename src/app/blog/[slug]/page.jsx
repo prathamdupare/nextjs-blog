@@ -21,6 +21,7 @@ const SinglePostPage = async ({ params }) => {
         <div>
           <h1 className="text-[30px]">{post.title}</h1>
         </div>
+        <div></div>
         <div className="flex flex-row my-5 gap-3">
           <div className="min-w-[30px] ">
             <Image
