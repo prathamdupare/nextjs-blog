@@ -68,8 +68,6 @@ export const options = {
 
             await newUser.save();
           }
-
-          redirect("/");
         } catch (error) {
           console.log(error);
           return false;
