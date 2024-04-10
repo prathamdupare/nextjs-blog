@@ -22,9 +22,9 @@ const PostCard = ({ post }) => {
           />
         </div>
         <CardHeader>
-          <CardTitle>{post.title}</CardTitle>
+          <CardTitle>{post.title.slice(0, 30)}...</CardTitle>
           <CardDescription className="max-w-[200px]">
-            {post.desc}
+            {post.desc.slice(0, 100)}...
           </CardDescription>
         </CardHeader>
         <CardFooter>

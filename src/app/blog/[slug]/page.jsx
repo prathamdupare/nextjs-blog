@@ -7,7 +7,7 @@ const SinglePostPage = async ({ params }) => {
   const post = await getPost(slug);
   const user = await getUser(post.userId);
   return (
-    <div className="flex flex-col md:flex-row gap-3">
+    <div className="flex flex-col h-full  md:flex-row gap-3">
       <div className="">
         <Image
           src={post.img}

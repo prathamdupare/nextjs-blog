@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <div className="container">
+            <div className="flex flex-col container">
               <Navbar />
-              <div className="h-[85vh]" a>
+              <div className="md:h-[80vh]" a>
                 {children}
               </div>
               <Footer />

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="flex h-full ">
+    <div className="flex h-full relative  gap-2">
       <div className="w-[90%] h-full flex flex-col justify-center">
         <h1 className="text-[40px] text-purple-700 dark:text-purple-400 font-bold">
           About Agency
@@ -24,7 +24,7 @@ const page = () => {
           sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
           consectetur et est culpa et culpa duis.
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-6 flex-wrap">
           <div>
             <h1 className="font-bold text-[40px] text-purple-700 dark:text-purple-400">
               10k+

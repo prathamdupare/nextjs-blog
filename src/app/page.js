@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Home = () => {
   return (
-    <div className="flex h-full ">
+    <div className="flex h-[80vh] ">
       <div className="w-[90%] h-full flex flex-col justify-center">
         <h1 className="text-[70px] font-bold">Creative Thoughts Agency</h1>
         <p className="py-3">
