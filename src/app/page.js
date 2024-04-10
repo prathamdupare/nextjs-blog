@@ -12,7 +12,7 @@ const Home = () => {
         </p>
         <div className="flex gap-3">
           <Button>Learn More</Button>
-          <Button>Contact</Button>
+          <Button>Contact Us</Button>
         </div>
 
         <div>
