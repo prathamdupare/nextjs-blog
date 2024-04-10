@@ -57,7 +57,7 @@ export const options = {
           await connectToDb();
 
           const userExists = await User.findOne({ email: profile.email });
-          console.log("User created", userExists);
+          console.log("User Exists", userExists);
 
           if (!userExists) {
             const newUser = new User({
@@ -66,15 +66,16 @@ export const options = {
               image: profile.image,
             });
 
+            console.log("New User Created", newUser);
             await newUser.save();
           }
+
+          return true;
         } catch (error) {
           console.log(error);
           return false;
         }
       }
-
-      return true;
     },
   },
 };
