@@ -4,6 +4,7 @@ import connectToDb from "@/lib/connectToDb";
 import { User } from "@/lib/models";
 
 import bcrypt from "bcryptjs";
+import { redirect } from "next/navigation";
 
 const login = async (credentials) => {
   try {
@@ -67,6 +68,8 @@ export const options = {
 
             await newUser.save();
           }
+
+          redirect("/");
         } catch (error) {
           console.log(error);
           return false;
